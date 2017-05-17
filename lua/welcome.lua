@@ -1,0 +1,1 @@
+ngx.print("welcome to use LUA. That is similar to my name HUA")
