@@ -1,3 +1,17 @@
+-- waf begin
+
+local ret, waf = pcall(require, "waf")
+
+if ret then
+    local c_ret, r_ret = pcall(waf.exec)
+    if c_ret and r_ret then 
+    -- c_ret success processed, r_ret redirect
+        return
+    end
+end
+
+-- waf end
+
 local uri = ngx.var.uri
 -- home page
 if uri == "" or uri == "/" then
