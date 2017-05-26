@@ -2,3 +2,4 @@ logs/error.log
 .buildpath
 .project
 .settings/
+dist/

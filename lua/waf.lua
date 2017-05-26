@@ -16,7 +16,7 @@ function parse_ip(ip_str)
 end
 
 
-local white_list_str = "192.168.0.168"
+local white_list_str = "127.0.0.1,192.168.0.168"
 local white_list = parse_ip(white_list_str)
 
 local black_list_str = "127.0.0.1,192.168.0.168,localhost"
