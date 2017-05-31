@@ -2,7 +2,8 @@
 
 rm -rf ./luaweb-1.0
 mkdir -p luaweb-1.0/logs
-cp -rf conf luaweb-1.0
+mkdir -p luaweb-1.0/conf
+cp -rf conf/nginx-prod.conf luaweb-1.0/conf/nginx.conf
 cp -rf html luaweb-1.0
 cp -rf lua luaweb-1.0
 cp -rf lualib luaweb-1.0

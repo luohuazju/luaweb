@@ -36,7 +36,6 @@ RUN	luarocks install md5
 #install app
 RUN	mkdir -p /share/
 ADD	dist/raspberrypi-openresty-1.0.tgz /share/	
-ADD     conf/nginx-prod.conf /share/luaweb-1.0/conf/nginx.conf
 
 #start the application
 EXPOSE  80
