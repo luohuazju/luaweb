@@ -1,5 +1,6 @@
-logs/error.log
+logs/*.log
 .buildpath
 .project
 .settings/
 dist/
+install/
