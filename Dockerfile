@@ -26,16 +26,17 @@ RUN     make install
 #install luarocks
 ADD	install/luarocks-2.4.2.tar.gz /install/
 WORKDIR /install/luarocks-2.4.2
-RUN	./configure --prefix=/tool/luarocks --with-lua="/tool/openresty/luajit" --lua-suffix="jit" --with-lua-include="/tool/openresty/luajit/include/luajit-2.1"
+RUN	./configure --with-lua="/tool/openresty/luajit" --lua-suffix="jit" --with-lua-include="/tool/openresty/luajit/include/luajit-2.1"
 RUN	make build
 RUN	make install
 
 #install dependencies
-RUN	/tool/luarocks/bin/luarocks install md5
+RUN	luarocks install md5
 
 #install app
 RUN	mkdir -p /share/
 ADD	dist/raspberrypi-openresty-1.0.tgz /share/	
+ADD     conf/nginx-prod.conf /share/luaweb-1.0/conf/nginx.conf
 
 #start the application
 EXPOSE  80
@@ -43,3 +44,6 @@ RUN     mkdir -p /app/
 ADD     start.sh /app/ 
 WORKDIR /app/
 CMD	[ "./start.sh" ]
+
+RUN ln -sf /dev/stdout /share/luaweb-1.0/logs/access.log
+RUN ln -sf /dev/stderr /share/luaweb-1.0/logs/error.log

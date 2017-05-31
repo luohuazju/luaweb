@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-rm -rf ./dist
-mkdir -p dist/luaweb/logs
-cp -rf conf dist/luaweb
-cp -rf html dist/luaweb
-cp -rf lua dist/luaweb
-cp -rf lualib dist/luaweb
+rm -rf ./luaweb-1.0
+mkdir -p luaweb-1.0/logs
+cp -rf conf luaweb-1.0
+cp -rf html luaweb-1.0
+cp -rf lua luaweb-1.0
+cp -rf lualib luaweb-1.0
 
 luajit=/opt/openresty/luajit/bin/luajit
 
@@ -19,5 +19,5 @@ function compile() {
     done
 }
 
-compile "./dist/luaweb/lua/web/*"
-compile "./dist/luaweb/lua/*"
+compile "./luaweb-1.0/lua/web/*"
+compile "./luaweb-1.0/lua/*"

@@ -4,3 +4,4 @@ logs/*.log
 .settings/
 dist/
 install/
+luaweb-1.0/

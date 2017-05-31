@@ -8,7 +8,7 @@ app-build:
 	wget https://openresty.org/download/openresty-1.11.2.3.tar.gz -P install/
 	wget http://luarocks.github.io/luarocks/releases/luarocks-2.4.2.tar.gz -P install/
 	./package.sh
-	tar -cvzf ./dist/$(NAME)-1.0.tgz ./dist/luaweb
+	tar -cvzf ./dist/$(NAME)-1.0.tgz ./luaweb-1.0
 
 docker-context:
 
